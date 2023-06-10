@@ -60,6 +60,15 @@ window.addEventListener('scroll', function() {
     arrow.classList.remove('hide-arrow');
   }
 });
+// Get the arrow element
+const arrow = document.querySelector('.arrow');
+
+// Add click event listener to the arrow
+arrow.addEventListener('click', () => {
+  // Scroll to the section with the ID 'section2'
+  const section2 = document.getElementById('section2');
+  section2.scrollIntoView({ behavior: 'smooth' });
+});
 
 
 // Thumbnail Tilt FX
