@@ -19,7 +19,6 @@ html, body {
   font-family: 'Montserrat', sans-serif;
 	background-color: var(--darker);
   max-width: 100%;
-  overflow-x: hidden;
 }
 
 nav {
@@ -59,8 +58,8 @@ nav {
 
 /* Second section */
 #section2 {
-  /* background-color: var(--darker); */
-  background-image: url("../img/pexels-adrien-olichon-2387793.png");
+  background-color: var(--darker);
+  overflow-x: hidden;
 }
 
 /* Third section */

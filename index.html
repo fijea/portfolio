@@ -50,6 +50,22 @@
     </div>
     <div class="arrow"></div>
   </div>
+  
+  <!-- Background Animation -->
+  <script>
+    var section1 = document.getElementById('section1');
+
+    section1.addEventListener('mousemove', function(event) {
+      var mouseX = event.clientX;
+      var mouseY = event.clientY;
+
+      var offsetX = Math.round(mouseX / window.innerWidth * 15 - 5);
+      var offsetY = Math.round(mouseY / window.innerHeight * 15 - 5);
+
+      section1.style.backgroundPositionX = offsetX + 'px';
+      section1.style.backgroundPositionY = offsetY + 'px';
+    });
+  </script>
 
   <!-- Second section -->
   <div id="section2" class="parallax-container">
@@ -94,22 +110,6 @@
       </div>
     </div>
   </div>
-  
-  <!-- Background Animation -->
-  <script>
-    var section2 = document.getElementById('section2');
-
-    section2.addEventListener('mousemove', function(event) {
-      var mouseX = event.clientX;
-      var mouseY = event.clientY;
-
-      var offsetX = Math.round(mouseX / window.innerWidth * 15 - 5);
-      var offsetY = Math.round(mouseY / window.innerHeight * 15 - 5);
-
-      section2.style.backgroundPositionX = offsetX + 'px';
-      section2.style.backgroundPositionY = offsetY + 'px';
-    });
-  </script>
 
   <!-- Third section -->
   <div id="section3" class="parallax-container">
