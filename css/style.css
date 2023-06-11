@@ -2,6 +2,7 @@
   --darkest: #000;
 	--darker: #111;
 	--dark: #333;
+  --gray: #888;
 	--border-line: 1px solid #444;
 	--radius-sm: 0.2rem;
 	--radius-md: 1rem;
@@ -12,7 +13,10 @@
 	--modal-bg: #111;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,500;0,600;0,700;1,100;1,400;1,500;1,600;1,700&display=swap');
+
 html, body {
+  font-family: 'Montserrat', sans-serif;
 	background-color: var(--darker);
   max-width: 100%;
   overflow-x: hidden;
@@ -27,6 +31,14 @@ nav {
 }
 .offcanvas {
  background-color: rgba(0,0,0,0.9); 
+}
+@media (max-width: 767px) {
+.offcanvas a.nav-link {
+  font-size: 5rem;
+  line-height: 5rem;
+  font-weight: normal;
+  color: white;
+}
 }
 
 .parallax-container {
@@ -47,12 +59,13 @@ nav {
 
 /* Second section */
 #section2 {
-  background-color: var(--darker);
+  /* background-color: var(--darker); */
+  background-image: url("../img/pexels-adrien-olichon-2387793.png");
 }
 
 /* Third section */
 #section3 {
-  background-image: url('image3.jpg');
+  background-image: url("../img/mountain.png");
 }
 
 .arrow,
@@ -60,7 +73,6 @@ nav {
   position: absolute;
   left: 50%;
 }
-
 .arrow {
   width: 25px;
   height: 25px;
@@ -74,7 +86,6 @@ nav {
   transition: opacity 0.3s, bottom 0.3s; /* Added transition property */
   opacity: 0.8;
 }
-
 .arrow:before {
   content: "";
   width: 20px;
@@ -89,7 +100,6 @@ nav {
   animation-iteration-count: infinite;
   animation-name: arrow;
 }
-
 @keyframes arrow {
   0% {
     opacity: 1;
@@ -99,7 +109,6 @@ nav {
     transform: translate(-10px, -10px);
   }
 }
-
 .hide-arrow {
   opacity: 0;
   bottom: 10%;
@@ -148,12 +157,21 @@ nav {
   color: white;
   width: 10rem;
   margin-left: -6rem;
-  margin-bottom: 1rem;
-  border-top: 2px solid white;
-  padding-top: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid white;
+  padding-bottom: 0.5rem;
   text-shadow: 4px 8px 10px rgba(0,0,0,0.8);
   position: relative;
   z-index: 2;
+}
+.thumb-subtitle {
+  color: var(--gray);
+  position: absolute;
+  z-index: 2;
+  margin-left: -6rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 /* Text styles */
@@ -197,7 +215,11 @@ p {
 
 /* Footer */
 footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px 0;
+  background-color: transparent;
+  color: var(--dark);
+  margin-top: -1.8rem;
+}
+footer p {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
 }

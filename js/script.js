@@ -135,3 +135,7 @@ for (let i = 0; i < elements.length; i++) {
     el.style.transform = 'perspective(500px) scale(1.1) rotateX(0) rotateY(0)';
   });
 }
+
+// Auto Update Copyright
+const currentYear = new Date().getFullYear();
+document.getElementById('currentYear').textContent = currentYear;
