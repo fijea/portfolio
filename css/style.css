@@ -21,6 +21,19 @@ html, body {
   max-width: 100%;
 }
 
+body::-webkit-scrollbar {
+    width: 3px;
+}
+/* Customize the scrollbar track */
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+/* Customize the scrollbar thumb */
+body::-webkit-scrollbar-thumb {
+  background-color: var(--dark);
+  border-radius: 3px;
+}
+
 nav {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
 }
@@ -47,24 +60,46 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
   /* padding: 2rem 1rem; */
-  padding-top: 5vh;
+  padding-top: 6vh;
 }
 
 /* First section */
-#section1 {
-  background-image: url("../img/pexels-adrien-olichon-2387793.png");
+#welcome {
+  /* background-image: url("../img/pexels-adrien-olichon-2387793.png"); */
+  position: relative;
   padding-top: 30vh;
 }
 
+#welcome video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#welcome .container {
+  position: relative;
+  z-index: 1; /* Make sure the content is above the video */
+}
+
 /* Second section */
-#section2 {
+#works {
   background-color: var(--darker);
   overflow-x: hidden;
 }
 
 /* Third section */
-#section3 {
+#connect {
   background-image: url("../img/mountain.png");
+}
+
+/* Blank Page */
+#blank {
+  background-image: url("../img/pexels-adrien-olichon-2387793.png");
+  position: relative;
+  padding-top: 30vh;
 }
 
 .arrow,
@@ -121,7 +156,7 @@ nav {
   transition: box-shadow 0.1s, transform 0.1s;
   background-size: 100%;
   background-repeat: no-repeat;
-  margin: 2rem 0rem 4rem 7rem;
+  margin: 2rem 0rem 4rem 8rem;
   align-items: flex-end;
   border-radius: var(--radius-sm);
   position: relative;
@@ -185,32 +220,55 @@ nav {
   text-align: center;
 }
 
-h1 {
-  font-size: 48px;
-  margin-bottom: 30px;
-}
-
-p {
-  font-size: 24px;
-  margin-bottom: 30px;
-}
-
-.social-icons {
-  font-size: 24px;
-  margin-top: 30px;
-}
-
 @keyframes fade {
-      0% { opacity: 0; }
-      25% { opacity: 1; }
-      75% { opacity: 1; }
-      100% { opacity: 0; }
-    }
-    
-    /* Apply the fade animation to the changing text */
-    #changingText {
-      animation: fade 3s ease-in-out infinite;
-    }
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Apply the fade animation to the changing text */
+#changingText {
+  animation: fade 3s ease-in-out infinite;
+}
+
+.profile {
+  backdrop-filter: blur(3px);
+  background-color: rgba(255,255,255,0.1);
+  box-shadow: 0px 0px 30px rgba(0,0,0,0.6);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  margin-top: 10vh;
+}
+.profile img.pp {
+  border-radius: 100%;
+  width: 200px;
+  border: 3px solid white;
+}
+.profile hr {
+  border-color: white;
+}
+
+.social-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.social-links li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.social-links a {
+  display: inline-block;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  line-height: 30px;
+  transition: background-color 0.3s;
+}
+.social-links a:hover {
+  background-color: var(--gray);
+}
 
 /* Footer */
 footer {

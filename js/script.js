@@ -49,6 +49,14 @@ document.addEventListener('DOMContentLoaded', function() {
   }, 3000); // Change the word every 3 seconds
 });
 
+// Video Loop
+const video = document.getElementById('videoPlayer');
+
+  video.addEventListener('ended', () => {
+    video.currentTime = 0;
+    video.play();
+  });
+
 // Scroll Indicator
 window.addEventListener('scroll', function() {
   var arrow = document.querySelector('.arrow');
