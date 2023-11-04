@@ -1,17 +1,23 @@
 // Navigation Indicator
-// Get all the nav links
-  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+document.addEventListener('DOMContentLoaded', function () {
+  // Get all the nav links
+  const navLinks = document.querySelectorAll('.navbar .nav-link');
+
+  // Reference the offcanvas element
+  const offcanvasElement = document.getElementById('offcanvasNavbar');
+
+  // Get the offcanvas instance
+  var bsOffcanvas = new bootstrap.Offcanvas(offcanvasElement);
 
   // Add an event listener to each nav link
   navLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      // Remove the "active" class from all nav links
-      navLinks.forEach(link => link.classList.remove('active'));
-
-      // Add the "active" class to the clicked nav link
-      this.classList.add('active');
+    link.addEventListener('click', function () {
+      // Use Bootstrap's native JavaScript method to hide the offcanvas
+      bsOffcanvas.hide();
     });
   });
+});
+
 
 // Changing Text
 document.addEventListener('DOMContentLoaded', function() {
